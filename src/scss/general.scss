@@ -1,4 +1,5 @@
 body {
+  font-size: 100%;
   background-color: rgba(12, 18, 39, 0.99);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: rgb(241, 239, 239);
@@ -16,6 +17,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: rem(20);
+    padding: rem(15);
   }
   &__li {
     background-color: rgba(255, 255, 255, 0.15);
@@ -30,8 +32,15 @@ body {
 
     & span {
       display: block;
-      
+
+      &:first-child {
+        font-size: rem(18);
+        font-weight: 400;
+      }
+
       &:last-child {
+        font-size: rem(18);
+        font-weight: 600;
         background-color: rgba(255, 255, 255, 0.2);
         border-radius: rem(13) 0 0 rem(13);
         padding: rem(5) rem(10) rem(5) rem(10);

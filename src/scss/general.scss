@@ -8,4 +8,34 @@ body {
   max-width: rem(1300);
   margin: 0 auto;
   padding: rem(30) rem(10);
+  overflow: hidden;
+}
+
+.currency-nav {
+  &__list {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(20);
+  }
+  &__li {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: rem(4);
+    overflow: hidden;
+    padding: 0 0 0 rem(10);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(5);
+
+    & span {
+      display: block;
+      
+      &:last-child {
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: rem(13) 0 0 rem(13);
+        padding: rem(5) rem(10) rem(5) rem(10);
+      }
+    }
+  }
 }

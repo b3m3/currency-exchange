@@ -83,4 +83,29 @@ body {
   max-width: 81.25rem;
   margin: 0 auto;
   padding: 1.875rem 0.625rem;
+  overflow: hidden;
+}
+
+.currency-nav__list {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.currency-nav__li {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 0.25rem;
+  overflow: hidden;
+  padding: 0 0 0 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3125rem;
+}
+.currency-nav__li span {
+  display: block;
+}
+.currency-nav__li span:last-child {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.8125rem 0 0 0.8125rem;
+  padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
 }

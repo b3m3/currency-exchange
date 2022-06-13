@@ -18,6 +18,7 @@ body {
     align-items: center;
     gap: rem(20);
     padding: rem(15);
+    transition: .3s ease;
   }
   &__li {
     background-color: rgba(255, 255, 255, 0.15);

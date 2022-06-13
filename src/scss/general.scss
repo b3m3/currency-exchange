@@ -55,21 +55,114 @@ body {
 /* exchange */
 
 .exchange {
-  &__wrapp {}
-  &__arrows {}
-  &__nav {}
-  &__total {}
+  &__wrapp {
+    margin: rem(50) 0 0 0;
+    font-size: rem(18);
+    display: flex;
+    justify-content: center;
+    gap: rem(20);
+  }
+  &__arrows {
+    padding: rem(13) 0 0 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: rem(10);
+  }
+  &__value {
+    font-size: rem(40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: rem(30);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: rem(7);
+    @include fit('width', 300, 100, 1);
+    @include fit('height', 300, 100, 1);
+  }
 }
 
 .arrows-exchange {
-  &__arrow {}
+  &__arrow {
+    font-size: rem(25);
+    margin: rem(-7) 0;
+  }
 }
 
-.nav-exchange {
-  &__title {}
-  &__list {}
+.block-exchange {
+  &__nav {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: rem(10);
+    padding: rem(5) rem(10);
+    height: rem(50);
+    min-width: rem(200);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: rem(7);
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: rem(20);
+
+    & span {
+      @include arrow(down, #fff, 2px, 3px);
+      transition: .3s ease;
+    }
+  }
+  &__list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    top: rem(55);
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: auto;
+    border-radius: rem(7);
+    background-color: rgba(12, 18, 39, 0.99);
+    transition: .3s ease-out;
+    
+    &.show-items {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      max-height: rem(300);
+    }
+  }
+  &__li {
+    font-size: rem(15);
+    padding: rem(5) 0;
+    transition: .1s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+  &__input{
+    padding: 0 rem(10);
+    color: #fff;
+    height: rem(40);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: rem(5);
+
+    &::-webkit-outer-spin-button, 
+    &::-webkit-inner-spin-button {
+      display: none
+    }
+  }
 }
 
-.total-exchange {
+.value-exchange {
+  &__name {}
   &__number {}
 }

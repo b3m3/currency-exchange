@@ -1,3 +1,5 @@
+import { createCurrencyItem, createExchangeItem } from './modules/create-items.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
@@ -13,28 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return await data.rates;
   };
 
-  const createCurrencyNavItem = (wrapp, name, rate) => {
-    const li = document.createElement('li');
-    li.classList.add('currency-nav__li');
-    li.innerHTML = `
-      <span class="currency-nav__name">${name}</span>
-      <span class="currency-nav__rate">${rate}</span>
-    `;
-    wrapp.append(li);
-  };
-
-  const createExchangeItem = (wrapp, name, rate) => {
-    const li = document.createElement('li');
-    li.classList.add('block-exchange__li');
-    li.setAttribute('data-value', rate);
-    li.innerHTML = `${name}`;
-    wrapp.append(li);
-  };
 
   getData(url)
     .then(rates => {
       for (const key in rates) {
-        createCurrencyNavItem(currencyNavWrapp, key, (rates[key]).toFixed(3));
+        createCurrencyItem(currencyNavWrapp, key, (rates[key]).toFixed(3));
         
         exchangeListWrapps.forEach(wrapp => {
           createExchangeItem(wrapp, key, (rates[key]).toFixed(3));

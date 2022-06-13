@@ -149,18 +149,19 @@ body {
   flex-direction: column;
   gap: 1.875rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.4375rem;
   width: 300px;
   height: 300px;
 }
 @media (max-width: 1250px) {
   .exchange__value {
-    width: calc(100px + 200 * ((100vw - 320px) / 930));
+    width: calc(200px + 100 * ((100vw - 320px) / 930));
   }
 }
 @media (max-width: 1250px) {
   .exchange__value {
-    height: calc(100px + 200 * ((100vw - 320px) / 930));
+    height: calc(200px + 100 * ((100vw - 320px) / 930));
   }
 }
 
@@ -177,7 +178,7 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 0.625rem;
-  padding: 0.3125rem 0.625rem;
+  padding: 0.3125rem 0.9375rem;
   height: 3.125rem;
   min-width: 12.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -186,9 +187,10 @@ body {
 .block-exchange__title {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: space-between;
+  width: 100%;
 }
-.block-exchange__title span {
+.block-exchange__title span:last-child {
   border: solid #fff;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -219,6 +221,9 @@ body {
   font-size: 0.9375rem;
   padding: 0.3125rem 0;
   transition: 0.1s ease;
+}
+.block-exchange__li.selected {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .block-exchange__li:hover {
   background-color: rgba(255, 255, 255, 0.3);

@@ -81,9 +81,10 @@ body {
     flex-direction: column;
     gap: rem(30);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: rem(7);
-    @include fit('width', 300, 100, 1);
-    @include fit('height', 300, 100, 1);
+    @include fit('width', 300, 200, 1);
+    @include fit('height', 300, 200, 1);
   }
 }
 
@@ -103,7 +104,7 @@ body {
     align-items: center;
     flex-direction: column;
     gap: rem(10);
-    padding: rem(5) rem(10);
+    padding: rem(5) rem(15);
     height: rem(50);
     min-width: rem(200);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -112,9 +113,10 @@ body {
   &__title {
     display: flex;
     align-items: center;
-    gap: rem(20);
+    justify-content: space-between;
+    width: 100%;
 
-    & span {
+    & span:last-child {
       @include arrow(down, #fff, 2px, 3px);
       transition: .3s ease;
     }
@@ -144,6 +146,10 @@ body {
     padding: rem(5) 0;
     transition: .1s ease;
 
+    &.selected {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
     &:hover {
       background-color: rgba(255, 255, 255, 0.3);
     }
@@ -160,9 +166,4 @@ body {
       display: none
     }
   }
-}
-
-.value-exchange {
-  &__name {}
-  &__number {}
 }

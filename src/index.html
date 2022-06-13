@@ -20,6 +20,23 @@
           <!-- items -->
         </ul>
       </nav>
+
+      <div class="exchange">
+        <div class="exchange__wrapp">
+          @@include('./html/blocks/nav.html', {})
+
+          <div class="exchange__arrows arrows-exchange">
+            <span class="arrows-exchange__arrow">&#129046;</span>
+            <span class="arrows-exchange__arrow">&#129044;</span>
+          </div>
+
+          @@include('./html/blocks/nav.html', {})
+
+          <div class="exchange__total total-exchange">
+            <span class="total-exchange__number"></span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

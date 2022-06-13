@@ -84,9 +84,12 @@ body {
   max-width: 81.25rem;
   margin: 0 auto;
   padding: 1.875rem 0.625rem;
-  overflow: hidden;
 }
 
+/* currency */
+.currency-nav {
+  overflow: hidden;
+}
 .currency-nav__list {
   display: inline-flex;
   align-items: center;
@@ -118,3 +121,5 @@ body {
   border-radius: 0.8125rem 0 0 0.8125rem;
   padding: 0.3125rem 0.625rem 0.3125rem 0.625rem;
 }
+
+/* exchange */

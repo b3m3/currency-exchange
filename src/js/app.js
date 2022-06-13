@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   const currencyNavWrapp = document.querySelector('.currency-nav__list');
+  const exchangeListWrapp = document.querySelectorAll('.exchange-list');
   const container = document.querySelector('.app__wrapp');
 
   const url = 'https://openexchangerates.org/api/latest.json?app_id=59c3f4f34d484f97b4cfd87dbd0825d4';
@@ -22,10 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapp.append(li);
   };
 
+  const createExchangeItem = (wrapp, name, rate) => {
+    const li = document.createElement('li');
+    li.classList.add('exchange__from-item');
+    li.setAttribute('data-value', rate);
+    li.innerHTML = `${name}`;
+    wrapp.append(li);
+  };
+
   getData(url)
     .then(rates => {
       for (const key in rates) {
         createCurrencyNavItem(currencyNavWrapp, key, (rates[key]).toFixed(3));
+        
+        exchangeListWrapp.forEach(wrapp => {
+          createExchangeItem(wrapp, key, (rates[key]).toFixed(3));
+        });
       }
 
       let px = 0;

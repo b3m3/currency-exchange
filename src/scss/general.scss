@@ -9,10 +9,12 @@ body {
   max-width: rem(1300);
   margin: 0 auto;
   padding: rem(30) rem(10);
-  overflow: hidden;
 }
 
+/* currency */
+
 .currency-nav {
+  overflow: hidden;
   &__list {
     display: inline-flex;
     align-items: center;
@@ -48,4 +50,26 @@ body {
       }
     }
   }
+}
+
+/* exchange */
+
+.exchange {
+  &__wrapp {}
+  &__arrows {}
+  &__nav {}
+  &__total {}
+}
+
+.arrows-exchange {
+  &__arrow {}
+}
+
+.nav-exchange {
+  &__title {}
+  &__list {}
+}
+
+.total-exchange {
+  &__number {}
 }

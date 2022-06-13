@@ -1,4 +1,5 @@
 import { createCurrencyItem, createExchangeItem } from './modules/create-items.js';
+import moveCurrency from './modules/move-currency.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
@@ -20,24 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(rates => {
       for (const key in rates) {
         createCurrencyItem(currencyNavWrapp, key, (rates[key]).toFixed(3));
-        
-        exchangeListWrapps.forEach(wrapp => {
-          createExchangeItem(wrapp, key, (rates[key]).toFixed(3));
-        });
+        exchangeListWrapps.forEach(wrapp => createExchangeItem(wrapp, key, (rates[key]).toFixed(3)));
       }
 
-      let px = 0;
-      const end = currencyNavWrapp.clientWidth - container.clientWidth;
-
-      setInterval(() => {
-        if (px < end) {
-          px++;
-        } else {
-          px = 0;
-        }
-
-        currencyNavWrapp.style.transform = `translate(-${px}px)`;
-      }, 16);
+      moveCurrency(currencyNavWrapp, container);
     })
     .catch(() => {
       currencyNavWrapp.innerHTML = 'Opps... pls check back later';

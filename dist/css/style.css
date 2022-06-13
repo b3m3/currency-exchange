@@ -95,7 +95,6 @@ body {
   align-items: center;
   gap: 1.25rem;
   padding: 0.9375rem;
-  transition: 0.3s ease;
 }
 .currency-nav__li {
   background-color: rgba(255, 255, 255, 0.15);

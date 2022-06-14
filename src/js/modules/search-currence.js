@@ -3,7 +3,7 @@ const searchCurrency = () => {
 
   searchInputs.forEach(search => {
     const parent = search.closest('.exchange__block');
-    const items = parent.querySelectorAll('.block-exchange__li');;
+    const items = parent.querySelectorAll('.block-exchange__li');
 
     search.addEventListener('input', () => {
       search.value = search.value.replace(/[\d]/g,'');

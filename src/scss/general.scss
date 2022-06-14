@@ -55,17 +55,26 @@ body {
 
 .exchange {
   &__wrapp {
-    margin: rem(50) 0 0 0;
+    @include fit('margin-top', 50, 20, 1);
     font-size: rem(18);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: rem(20);
+
+    @include mobile-l {
+      flex-direction: column;
+      gap: rem(15);
+    }
   }
   &__arrows {
     padding: rem(13) 0 0 0;
     display: flex;
     align-items: center;
     flex-direction: column;
+    @include mobile-l {
+      padding: 0;
+    }
   }
   &__block {
     position: relative;
@@ -85,6 +94,10 @@ body {
     border-radius: rem(7);
     @include fit('width', 300, 200, 1);
     @include fit('height', 300, 200, 1);
+
+    @include mobile-l {
+      width: 100%;
+    }
   }
 }
 

@@ -21,6 +21,15 @@ const calcCurrency = () => {
     list.classList.toggle('show-items');
     search.classList.toggle('show-search');
 
+    items.forEach(item => {
+      if (item.textContent === 'UAH' ||
+          item.textContent === 'USD' ||
+          item.textContent === 'EUR'
+      ) {
+        item.classList.add('top');
+      }
+    });
+
     if (e.target.classList.contains('block-exchange__li')) {
       items.forEach(item => {
         item.classList.remove('selected');
@@ -33,7 +42,7 @@ const calcCurrency = () => {
       search.value = '';
 
       if (valueFrom.textContent !== 'Select currency' && valueTo.textContent !== 'Select currency') {
-        inputs[1].value = inputs[0].value / valueFrom.dataset.value * valueTo.dataset.value;
+        inputs[1].value = (inputs[0].value / valueFrom.dataset.value * valueTo.dataset.value).toFixed(3);
       }
 
       if (e.target.closest('.nav-from')) {

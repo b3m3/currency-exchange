@@ -23,18 +23,20 @@
 
       <div class="exchange">
         <div class="exchange__wrapp">
-          @@include('./html/blocks/nav.html', {})
+          @@include('./html/blocks/nav.html', {"navClass": "nav-from", "titleClass": "title-from", "inputClass":
+          "input-from"})
 
           <div class="exchange__arrows arrows-exchange">
             <span class="arrows-exchange__arrow">&#129046;</span>
             <span class="arrows-exchange__arrow">&#129044;</span>
           </div>
 
-          @@include('./html/blocks/nav.html', {})
+          @@include('./html/blocks/nav.html', {"navClass": "nav-to", "titleClass": "title-to", "inputClass":
+          "input-to"})
 
           <div class="exchange__value value-exchange">
             <p class="value-exchange__name"><span class="ex-from">---</span> / <span class="ex-to">---</span></p>
-            <p class="value-exchange__number">0</p>
+            <p class="value-exchange__number">0.00</p>
           </div>
         </div>
       </div>

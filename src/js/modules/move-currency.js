@@ -1,6 +1,8 @@
-const moveCurrency = (wrappSelec, containerSelec) => {
+const moveCurrency = wrappSel => {
+  const container = document.querySelector('.app__wrapp');
+
   let px = 0;
-  const end = wrappSelec.clientWidth - containerSelec.clientWidth;
+  const end = wrappSel.clientWidth - container.clientWidth;
   
   setInterval(() => {
     if (px < end) {
@@ -9,7 +11,7 @@ const moveCurrency = (wrappSelec, containerSelec) => {
       px = 0;
     }
   
-    wrappSelec.style.transform = `translate(-${px}px)`;
+    wrappSel.style.transform = `translate(-${px}px)`;
   }, 16);
 };
 

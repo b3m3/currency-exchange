@@ -68,6 +68,7 @@ body {
     flex-direction: column;
   }
   &__block {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: rem(10);
@@ -163,6 +164,34 @@ body {
     &::-webkit-outer-spin-button, 
     &::-webkit-inner-spin-button {
       display: none
+    }
+  }
+  &__search {
+    text-align: center;
+    left: 50%;
+    top: rem(-35);
+    transform: translate(-50%);
+    border-radius: rem(5);
+    position: absolute;
+    height: rem(30);
+    width: 100%;
+    background-color: rgba(255, 255, 255, .3);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .4);
+
+    opacity: 0;
+    top: 0;
+    pointer-events: none;
+    transition: .3s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    &.show-search {
+      opacity: 1;
+      top: rem(-35);
+      pointer-events: all;
     }
   }
 }

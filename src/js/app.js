@@ -1,6 +1,7 @@
 import { createCurrencyItem, createExchangeItem } from './modules/create-items.js';
 import moveCurrency from './modules/move-currency.js';
 import calcCurrency from './modules/calc-currency.js';
+import searchCurrency from './modules/search-currence.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       moveCurrency(currencyNavWrapp);
       calcCurrency();
+      searchCurrency();
     })
     .catch(() => {
       currencyNavWrapp.innerHTML = 'Opps... pls check back later';
